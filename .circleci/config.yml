@@ -15,7 +15,6 @@ jobs:
 workflows:
   first-workflow:
     jobs:
-      - first-workflow/run
       - print_hello
       - print_world:
           requires:

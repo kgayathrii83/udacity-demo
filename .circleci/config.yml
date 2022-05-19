@@ -14,11 +14,12 @@ jobs:
     steps:
       - run:
         name: "Say hello"
-        command: echo hello $env_name 
+        command: echo hello world
 
 workflows:
   first-workflow:
     jobs:
+      - first-workflow/run
       - print_hello
       - print_world:
           requires:

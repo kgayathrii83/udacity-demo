@@ -4,17 +4,13 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run:
-        name: "Say hello"
-        command: "echo hello job"
+      - run: echo hello job
 
   print_world:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run:
-        name: "Say hello"
-        command: echo hello world
+      - run: echo hello world
 
 workflows:
   first-workflow:
@@ -23,5 +19,4 @@ workflows:
       - print_hello
       - print_world:
           requires:
-            - [print_hello]
-
+            - print_hello
